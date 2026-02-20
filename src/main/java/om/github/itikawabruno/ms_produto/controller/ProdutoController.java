@@ -20,12 +20,30 @@ public class ProdutoController {
 
     @GetMapping
     public ResponseEntity<List<ProdutoDTO>> getProduto(){
-        return service.getProdutos();
+        return ResponseEntity.ok(service.getProdutos());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProdutoDTO> getProdutoById(@PathVariable Long id){
+        ProdutoDTO dto = service.getProdutoById(id);
+        return ResponseEntity.ok(dto);
+    }
+
+    @GetMapping("/name/{nome}")
+    public ResponseEntity<ProdutoDTO> getProdutoByNome(@PathVariable String nome){
+        ProdutoDTO dto = service.getProdutoByNome(nome);
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping
     public ResponseEntity<ProdutoDTO> postProduto(@RequestBody ProdutoInputDTO inputDTO){
-        return service.inputProduto(new ProdutoInputDTO(inputDTO.nome(), inputDTO.descricao(), inputDTO.valor()));
+        return service.inputProduto(new ProdutoInputDTO(inputDTO.nome(), inputDTO.descricao(), inputDTO.valor(), inputDTO.estoque()));
+    }
+
+    @GetMapping("/valorTotal")
+    public ResponseEntity<Double> getAllValue(){
+        Double allValue = service.getAllValorOfProducts();
+        return ResponseEntity.ok(allValue);
     }
 
 }

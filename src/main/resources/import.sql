@@ -1,0 +1,3 @@
+--INSERT INTO tb_produto(nome, descricao, valor, stoque) VALUES ('Smart TV', 'Smart TV LG LED 50 polegadas', 2285.0, 10);
+--INSERT INTO tb_produto(nome, descricao, valor, stoque) VALUES ('Mouse Microsoft', 'Mouse sem fio', 250.0, 30);
+--INSERT INTO tb_produto(nome, descricao, valor, stoque) VALUES ('Teclado Microsoft', 'Teclado sem fio', 278.0, 24);

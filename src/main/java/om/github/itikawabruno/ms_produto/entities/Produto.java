@@ -1,16 +1,14 @@
 package om.github.itikawabruno.ms_produto.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode( of = "id")
 @Entity
-@Table( name = "produto")
+@Table( name = "tb_produto")
 public class Produto {
 
     @Id
@@ -19,5 +17,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private Double valor;
+    private Integer estoque;
+
 
 }
